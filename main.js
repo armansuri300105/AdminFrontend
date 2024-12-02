@@ -37,6 +37,7 @@ if (loginform) {
         });
 
         const result = await response.json();
+        console.log(result);
         if (response.ok) {
             console.log("Login response:", result);
             alert('Login successful');
