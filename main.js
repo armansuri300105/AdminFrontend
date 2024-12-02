@@ -6,7 +6,7 @@ if (form) {
         const formdata = new FormData(e.target);
         const data = Object.fromEntries(formdata.entries());
 
-        const response = await fetch('https://adminbackend-447g.onrender.com/api/signup', {
+        const response = await fetch('http://localhost:3000/api/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -29,7 +29,7 @@ if (loginform) {
         const formdata = new FormData(e.target);
         const data = Object.fromEntries(formdata.entries());
 
-        const response = await fetch('https://adminbackend-447g.onrender.com/api/login', {
+        const response = await fetch('http://localhost:3000/api/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
@@ -40,7 +40,7 @@ if (loginform) {
         if (response.ok) {
             console.log("Login response:", result);
             alert('Login successful');
-            window.location.href = 'https://adminbackend-447g.onrender.com';
+            window.location.href = 'http://localhost:3000';
         } else {
             alert(result.message);
         }
@@ -49,9 +49,9 @@ if (loginform) {
 
 const fetchProtectedData = async () => {
     try {
-        const response = await fetch('https://adminbackend-447g.onrender.com/', {
+        const response = await fetch('http://localhost:3000', {
             method: 'GET',
-            credentials: 'include' // Include cookies in the request
+            credentials: 'include'
         });
 
         if (response.ok) {
