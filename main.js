@@ -14,7 +14,7 @@ if (form) {
 
         const result = await response.json();
         if (response.ok) {
-            window.location.href = '/login.html';
+            window.location.href = '/';
         } else {
             alert(result.message);
         }
